@@ -9,12 +9,13 @@ public class StudentsGradesReal{
    int totalSubject = input.nextInt();
    int[][] scores = new int [totalStudent][totalSubject];
    int[] student = new int [totalStudent];
-   int[] sum = new int[totalStudent];
+   double[] sum = new double[totalStudent];
    double[] average = new double[totalStudent];
-   int[] newArray = new int[totalStudent];
+   double[] newArray = new double[totalStudent];
+   int[] position = new int[sum.length];
 	
 	for(int index = 0,counter=1; index < totalStudent; counter++, index++){
-	      int total = 0;
+	      double total = 0;
 	   for(int count = 0, element = 1; count < totalSubject; count++, element++){
 	      System.out.print("Enter the scores for student"+counter+"\nsubect"+element+": " );
 	      scores[index][count] = input.nextInt();
@@ -26,10 +27,10 @@ public class StudentsGradesReal{
 	
        }
       Arrays.sort(newArray);
-      int[] position = new int[sum.length];
       for(int count1 = 0; count1 < sum.length; count1++){
 	 for(int index1 = 0; index1 < sum.length; index1++){
 	    if(sum[count1] == newArray[index1])position[count1] = sum.length - index1;
+
          }
       }
 
@@ -38,12 +39,12 @@ public class StudentsGradesReal{
          System.out.printf("%10s%d", "SUB", index);
       }
       System.out.printf("%10s%10s%10s%n", "TOTAL", "AVERAGE ", "POSITION");
-      for(int index = 0,counter =1; index < totalSubject; index++,counter++){
+      for(int index = 0,counter =1; index < totalStudent; index++,counter++){
          System.out.print("Student"+counter);
          for(int count = 0; count < totalSubject; count++){
              System.out.printf("%11d",scores[index][count]);
          }
-	 System.out.printf("%8d%9.2f", sum[index], average[index]);
+	 System.out.printf("%10.2f%9.2f%8d", sum[index], average[index],position[index]);
 	 System.out.println();
       }
    }
