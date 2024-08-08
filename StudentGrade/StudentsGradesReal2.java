@@ -1,6 +1,6 @@
 import java.util.Arrays;
 import java.util.Scanner;
-public class StudentsGradesReal{
+public class StudentsGradesReal2{
    public static void main(String[] args){
    Scanner input = new Scanner(System.in);
    System.out.print("Enter the number of students: ");
@@ -13,10 +13,11 @@ public class StudentsGradesReal{
    double[] average = new double[totalStudent];
    double[] newArray = new double[totalStudent];
    int[] position = new int[sum.length];
-	
-	for(int index = 0,counter=1; index < totalStudent; counter++, index++){
+   int highestScore = 0;
+	int low = 0;
+	for(int index = 0,counter=1; index < scores.length; counter++, index++){
 	      double total = 0;
-	   for(int count = 0, element = 1; count < totalSubject; count++, element++){
+	   for(int count = 0, element = 1; count < scores[0].length ; count++, element++){
 	      System.out.print("Enter the scores for student"+counter+"\nsubect"+element+": " );
 		if(scores[index][count] < 0){
 		  System.out.print("Scores out of bound, pls Enter scores from 0-100: ");
@@ -51,6 +52,15 @@ public class StudentsGradesReal{
 	 System.out.printf("%10.2f%9.2f%8d", sum[index], average[index],position[index]);
 	 System.out.println();
       }
-   }
+      for(int count = 0; count < scores[0].length; count++){
+	for(int index = 0;index < scores.length; index++){
+           if(scores[index][count] > highestScore){
+	      highestScore = scores[index][count];
+}
+}
+	System.out.println(highestScore);
+}
+   
+}
 }
 	
