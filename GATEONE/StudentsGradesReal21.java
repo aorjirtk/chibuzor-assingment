@@ -1,12 +1,26 @@
 import java.util.Arrays;
 import java.util.Scanner;
-public class StudentsGradesReal2{
+public class StudentsGradesReal21{
    public static void main(String[] args){
    Scanner input = new Scanner(System.in);
+int  totalStudent = 0;
+int  totalSubject = 0;
+   while(totalStudent <= 0){
+
    System.out.print("Enter the number of students: ");
-   int totalStudent = input.nextInt();
+   totalStudent = input.nextInt();
+   if(totalStudent <= 0){
+ System.out.print("Enter the number of students as a positive number: ");
+}
+}   
+   while(totalSubject <= 0){
+  
    System.out.print("Enter the number of subjects: ");
-   int totalSubject = input.nextInt();
+   totalSubject = input.nextInt();
+   if(totalStudent <= 0){
+ System.out.print("Enter the number of subjects as a positive number: ");
+}
+} 
    int[][] scores = new int [totalStudent][totalSubject];
    int[] student = new int [totalStudent];
    double[] sum = new double[totalStudent];
@@ -18,7 +32,7 @@ public class StudentsGradesReal2{
 	for(int index = 0,counter=1; index < scores.length; counter++, index++){
 	      double total = 0;
 	   for(int count = 0, element = 1; count < scores[0].length ; count++, element++){
-	      System.out.print("Enter the scores for student"+counter+"\nsubject"+element+": " );
+	      System.out.print("Enter the scores for student"+counter+"\nsubect"+element+": " );
 		if(scores[index][count] < 0){
 		  System.out.print("Scores out of bound, pls Enter scores from 0-100: ");
 		    break;

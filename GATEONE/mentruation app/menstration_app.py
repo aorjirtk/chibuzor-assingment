@@ -1,23 +1,24 @@
 from datetime import datetime,timedelta
 print("*************************************************************************************")
+print()
 user_name = input("Please tell us your name: ")
 print()
-print("dear ",(user_name), "welcome to Jagbajantis Mestruation Calculator\n please help provide the following informations: ")
+print("dear ",(user_name), "***welcome to JAGBAJANTIS MENSTRUATION CALCULATOR***\n please provide the following informations: ")
 print()
-print("please note that we maintain strict privacy policy, all your details are safe")
+print("(Please note: we maintain strict privacy policy, all your details are safe)")
 print()
-next_flow = input("Enter the last date you saw your period in this format 'yyyy-mm-dd: ")
+last_flow_date = input("Enter the last date you saw your period in this format 'dd-mm-yyyy: ")
 
 print()
-period_length_end = int(input("How long dOes your period last: "))
+period_length_end = int(input("How long does your period last: "))
 
+print()
+cycle_length = int(input("Your Cycle comes after how many days?: "))
 
-period_length = 28
+my_date_format = "%d-%m-%Y"
+start_date = datetime.strptime(last_flow_date,my_date_format)
 
-my_date_format = "%Y-%m-%d"
-start_date = datetime.strptime(next_flow,my_date_format)
-
-date1 = timedelta(period_length)
+date1 = timedelta(cycle_length)
 next_period = start_date + date1
 
 print()
@@ -54,10 +55,10 @@ safe_period = flow_period + date2
 safe_time_zone = end_ovulution + date7
 
 print("YOUR SAFE PERIOD WILL BE WITH: ", end_ovulution,'-',safe_time_zone)
-
+print()
 
 print("THANK YOU FOR TRUSTING US")
-
+print()
 print("*************************************************************************************")
 
 

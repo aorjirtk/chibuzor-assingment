@@ -1,3 +1,5 @@
+
+
 card_num = str(input("Hello, Kindly Enter Card details to verify: "))
 number = [int(digit)for digit in card_num] 
 if(len(number) < 13 or len(number) > 16):
@@ -17,13 +19,13 @@ for digit in range (len(number)-1,0,-2):
 sum_total = sum_odd + total
 
 print('********************************************')
-if(number[0] == 4):
+if(number[0] == 4 & (len(number) < 13 or len(number) > 16) ):
 	print('**Credit Card Type : VisaCard')
-elif(number[0] == 5):
+elif(number[0] == 5 & (len(number) < 13 or len(number) > 16)):
 	print('**Credit Card Type : MasterCard')
-elif(number[0] == 6):
+elif(number[0] == 6 & (len(number) < 13 or len(number) > 16)):
 	print('**Credit Card Type : Discover Card')
-elif(number[0] == 3 and number[1] == 7):
+elif(number[0] == 3 and number[1] == 7  & (len(number) < 13 or len(number) > 16)):
 	print('**Credit Card Type :  American Express Card')
 else:
 	print('Invalid Card Type')
