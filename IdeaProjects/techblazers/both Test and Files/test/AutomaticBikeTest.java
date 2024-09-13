@@ -1,3 +1,5 @@
+package IdeaProjects.techblazers.test;
+
 import bike.AutomaticBike;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,6 +12,7 @@ public class AutomaticBikeTest {
     public void setUp() {
         automaticBike = new AutomaticBike();
     }
+
     @Test
     public void testThatICanSwitchOnAutomaticBike() {
         assertEquals("ON", automaticBike.switchOnAutomaticBike("ON"));

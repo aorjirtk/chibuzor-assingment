@@ -1,3 +1,5 @@
+package IdeaProjects.techblazers.test;
+
 import bank.Account2;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
